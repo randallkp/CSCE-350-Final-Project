@@ -1,1 +1,19 @@
-INSTRUCTIONS GO HERE
+Author: Randall Peterson
+
+syntax: sorts <input file>
+
+sample input data is provided in data.txt
+
+This program takes a set of integers as input data, and compares the performance of
+quicksort and mergesort on already sorted, reverse sorted, and randomly sorted sets
+of the input data. Performance is measured in time to completion of sort.
+
+output should look something like this.
+
+sort		data set	set size	time to sort
+quicksort	sorted		100		1s
+mergesort	sorted		100		1s
+quicksort	reverse		100		2s
+mergesort	reverse		100		2s
+quicksort	random		100		3s
+mergesort	random		100		3s
