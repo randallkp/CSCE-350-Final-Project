@@ -6,13 +6,44 @@
 #include <algorithm>
 using namespace std;
 
-int quickSort(vector<int> input) {
-	//returns time in ms to sort
-	
+void quickSort(vector<int> input, int left, int right) {
+	int pivotIndex,pivotValue;
+	vector<int> high,low;
+	if (left < right) {
+		pivotIndex = rand()%(right-left+1)+left;
+		pivotValue = input[pivotIndex]; //select random pivot
+		
+		//partition into higher and lower values
+		for (int i = left; i <= right; i++) {
+			if (input[i] >= pivotValue) high.push_back(input[i]);
+			else low.push_back(input[i]);
+		}
+		
+		//rewrite partitioned lists to original vector
+		for (int i = right; i >= left; i--) {
+			if (high.size() > 0) {
+				input[i] = high[high.size()-1];
+				high.pop_back();
+			}
+			else {
+				input[i] = low[low.size()-1];
+				low.pop_back();
+			}
+		}
+		
+		//find new position of pivot
+		for (int i = left; i <= right; i++) {
+			if (input[i] == pivotValue) pivotIndex = i;
+		}
+		
+		//recursively perform quicksort on smaller portions
+		quickSort(input, left, pivotIndex-1);
+		quickSort(input, pivotIndex+1, right);
+	}
 }
 
-int mergeSort(vector<int> input) {
-	//returns time in ms to sort
+void mergeSort(vector<int> input) {
+	
 	
 }
 
