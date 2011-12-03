@@ -1,0 +1,5 @@
+clear
+echo -e "algorithm\tpresort\tinput size\tcycles to sort"
+sorts data_small.txt
+sorts data_med.txt
+sorts data_large.txt
