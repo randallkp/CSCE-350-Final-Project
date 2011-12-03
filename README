@@ -2,7 +2,7 @@ Author: Randall Peterson
 
 syntax: sorts <input file>
 
-sample input data is provided in data.txt
+sample input data is provided in data_small.txt, data_med.txt, and data_large.txt
 
 This program takes a set of integers as input data, and compares the performance of
 quicksort and mergesort on already sorted, reverse sorted, and randomly sorted sets
@@ -10,10 +10,14 @@ of the input data. Performance is measured in time to completion of sort.
 
 output should look something like this.
 
-sort		data set	set size	time to sort
-quicksort	sorted		100		1s
-mergesort	sorted		100		1s
-quicksort	reverse		100		2s
-mergesort	reverse		100		2s
-quicksort	random		100		3s
-mergesort	random		100		3s
+sort type	presort		input size	cycles to sort
+quicksort	sorted		100		1000
+mergesort	sorted		100		1000
+quicksort	reverse		100		1000
+mergesort	reverse		100		1000
+quicksort	random		100		1000
+mergesort	random		100		1000
+
+
+To run program on all 3 data sets, use the run_tests shell script.
+
